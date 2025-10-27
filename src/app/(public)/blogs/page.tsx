@@ -20,7 +20,7 @@ const AllBlogsPage = async () => {
 
   return (
     <div>
-      <div className="pt-30 px-4 max-w-7xl mx-auto">
+      <div className="pt-36 px-4 max-w-7xl mx-auto">
       <h2 className="text-center text-4xl">All Blogs</h2>
       <div className="container py-16 mx-auto grid grid-cols-3 gap-5">
         {blogs.data.data.map((blog: IPost) => (

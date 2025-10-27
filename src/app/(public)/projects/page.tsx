@@ -7,9 +7,9 @@ export const revalidate = 60;
 
 export default async function ProjectsPage() {
   return (
-    <section className="container mx-auto py-36">
-      <h1 className="text-3xl font-bold mb-6 text-center">Project Showcase</h1>
-      <p className="text-gray-600 text-center mb-10">
+    <section className="container mx-auto my-36">
+      <h1 className="text-4xl mb-4 text-center">Project Showcase</h1>
+      <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">
         A selection of my personal and full-stack projects, showcasing both
         frontend and backend development skills.
       </p>

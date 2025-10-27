@@ -3,6 +3,7 @@ import Hero from "@/components/modules/Home/Hero";
 import { IPost } from "@/types";
 import AboutPage from "./about/page";
 import ContactPage from "./contact/page";
+import ProjectsPage from "./projects/page";
 
 export default async function HomePage() {
   const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/post`, {
@@ -25,6 +26,7 @@ export default async function HomePage() {
       </div>
       
       <AboutPage/>
+      <ProjectsPage/>
       <ContactPage/>
     </div>
   );

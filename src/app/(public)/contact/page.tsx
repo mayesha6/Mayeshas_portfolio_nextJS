@@ -34,8 +34,8 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="container mx-auto py-32 px-6">
-      <h1 className="text-4xl font-bold mb-4 text-center">Contact Me</h1>
+    <section className="container mx-auto my-36 px-6">
+      <h1 className="text-4xl mb-4 text-center">Contact Me</h1>
       <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">
         Have a question, collaboration idea, or just want to say hi? Feel free
         to reach out — I&apos;d love to hear from you!

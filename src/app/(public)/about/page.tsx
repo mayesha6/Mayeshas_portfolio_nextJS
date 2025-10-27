@@ -9,7 +9,7 @@ export default function AboutPage() {
   const { name, title, bio, skills, hobbies, portfolioHighlights } = aboutMe;
 
   return (
-    <section className="container mx-auto py-36 max-w-7xl">
+    <section className="container mx-auto my-36 max-w-7xl">
       <div className="flex flex-col md:flex-row justify-between items-center gap-10">
         {/* Left Section */}
         <div className="flex-1">
