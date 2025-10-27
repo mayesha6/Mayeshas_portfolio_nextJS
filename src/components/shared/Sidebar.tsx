@@ -7,10 +7,8 @@ import { signOut, useSession } from "next-auth/react";
 
 export default function Sidebar() {
   const session = useSession();
-  console.log(session);
   return (
     <aside className="flex h-screen w-64 flex-col border-r bg-black text-white">
-      {/* Top navigation */}
       <nav className="flex-1 space-y-2 p-4">
         <Link
           href="/"
@@ -43,8 +41,6 @@ export default function Sidebar() {
           Blogs
         </Link>
       </nav>
-
-      {/* Bottom action */}
 
       {session.status === "authenticated" && (
         <div className="p-4 border-t border-gray-500">

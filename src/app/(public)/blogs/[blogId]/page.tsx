@@ -30,7 +30,6 @@ const BlogDetailsPage = async ({params}: {params: Promise<{blogId : string}>}) =
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/post/${blogId}`)
     const blog = await res.json()
-    console.log(blog.data.title)
     return (
         <div>
             <BlogDetailsCard blog={blog.data}/>

@@ -40,7 +40,6 @@ export const NavMenu = ({ isLoggedIn, ...props }: NavMenuProps) => (
         </NavigationMenuLink>
       </NavigationMenuItem>
 
-      {/* 👇 Show Dashboard only if logged in */}
       {isLoggedIn && (
         <NavigationMenuItem>
           <NavigationMenuLink asChild>
