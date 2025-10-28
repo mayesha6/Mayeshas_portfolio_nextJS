@@ -9,16 +9,16 @@ export default function AboutPage() {
   const { name, title, bio, skills, hobbies, portfolioHighlights } = aboutMe;
 
   return (
-    <section className="container mx-auto my-36 max-w-7xl">
+    <section className="container mx-auto my-36 max-w-7xl px-5">
       <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-        {/* Left Section */}
         <div className="flex-1">
           <h1 className="text-4xl font-bold mb-2">{name}</h1>
           <p className="text-xl text-gray-600 mb-6">{title}</p>
-          <p className="mb-6 text-gray-700 leading-relaxed text-justify">{bio}</p>
+          <p className="mb-6 text-gray-700 leading-relaxed text-justify">
+            {bio}
+          </p>
         </div>
 
-        {/* Right Section (Image) */}
         <div className="flex-1 flex justify-center">
           <Image
             src="https://res.cloudinary.com/dtb6o7zzr/image/upload/v1761583316/8c47f6c4-c1eb-47ca-930b-16a27e356809_ubtlb2.png"
@@ -31,16 +31,18 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Education Section */}
       <div className="mt-16">
         <h2 className="text-3xl font-semibold mb-6 border-b-4 border-[#FDC435] inline-block pb-2">
           Education
         </h2>
         <div className="space-y-6">
           <div className="p-6 bg-gray-50 rounded-2xl shadow-md border-l-4 border-[#FDC435]">
-            <h3 className="text-xl font-bold text-gray-800">BSc in Computer Science and Engineering</h3>
+            <h3 className="text-xl font-bold text-gray-800">
+              BSc in Computer Science and Engineering
+            </h3>
             <p className="text-gray-600">
-              <strong>Institute:</strong> Bangladesh University of Business and Technology (BUBT)
+              <strong>Institute:</strong> Bangladesh University of Business and
+              Technology (BUBT)
             </p>
             <p className="text-gray-600">
               <strong>Duration:</strong> 2020 – 2024
@@ -51,7 +53,9 @@ export default function AboutPage() {
           </div>
 
           <div className="p-6 bg-gray-50 rounded-2xl shadow-md border-l-4 border-[#FDC435]">
-            <h3 className="text-xl font-bold text-gray-800">Diploma in Computer Technology</h3>
+            <h3 className="text-xl font-bold text-gray-800">
+              Diploma in Computer Technology
+            </h3>
             <p className="text-gray-600">
               <strong>Institute:</strong> Thakurgaon Polytechnic Institute
             </p>
@@ -65,7 +69,6 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Skills */}
       <div className="my-16">
         <h2 className="text-3xl font-semibold mb-6 border-b-4 border-[#FDC435] inline-block pb-2">
           Skills
@@ -82,7 +85,6 @@ export default function AboutPage() {
         </ul>
       </div>
 
-      {/* Portfolio Highlights */}
       <div className="mb-16">
         <h2 className="text-3xl font-semibold mb-6 border-b-4 border-[#FDC435] inline-block pb-2">
           Portfolio Highlights
@@ -90,7 +92,6 @@ export default function AboutPage() {
         <p className="text-gray-700 leading-relaxed">{portfolioHighlights}</p>
       </div>
 
-      {/* Hobbies */}
       <div>
         <h2 className="text-3xl font-semibold mb-6 border-b-4 border-[#FDC435] inline-block pb-2">
           Hobbies

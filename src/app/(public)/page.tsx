@@ -16,7 +16,7 @@ export default async function HomePage() {
     <div>
       <Hero />
       <h2 className="text-center my-5 text-4xl mt-30">Featured Posts</h2>
-      <div className="grid grid-cols-3 gap-5 py-10 container mx-auto">
+      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 py-10 container mx-auto px-5">
         {blogs.data.data.slice(0,3).map((blog : IPost)=>{
           return(
             <BlogCard key={blog.id} post={blog}/>
