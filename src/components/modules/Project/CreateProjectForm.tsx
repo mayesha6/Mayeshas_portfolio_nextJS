@@ -3,23 +3,24 @@ import Form from "next/form";
 import { useState } from "react";
 import { create } from "@/actions/create";
 
-export default function CreateBlogsForm() {
+export default function CreateProjectForm() {
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (formData: FormData) => {
     const title = formData.get("title")?.toString().trim();
     const content = formData.get("content")?.toString().trim();
     const thumbnail = formData.get("thumbnail")?.toString().trim();
-    const tags = formData.get("tags")?.toString().trim();
+    const livelink = formData.get("livelink")?.toString().trim();
+    const repolink = formData.get("repolink")?.toString().trim();
+    const techStack = formData.get("techStack")?.toString().trim();
 
-    // Basic validation
-    if (!title || !content || !thumbnail || !tags) {
+    if (!title || !content || !thumbnail || !techStack || !livelink || !repolink) {
       setError("All fields are required!");
       return;
     }
 
-    setError(null); // clear previous error
-    await create(formData); // call server action
+    setError(null); 
+    await create(formData); 
   };
 
   return (
@@ -67,11 +68,35 @@ export default function CreateBlogsForm() {
 
       <div>
         <label className="block text-sm font-medium text-gray-700">
-          Tags (comma separated)
+          Livesite Link
+        </label>
+        <input
+          type="url"
+          name="livelink"
+          placeholder="https://example.com/image.jpg"
+          className="p-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700">
+          Repository Link
+        </label>
+        <input
+          type="url"
+          name="repolink"
+          placeholder="https://example.com/image.jpg"
+          className="p-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700">
+          techStack (comma separated)
         </label>
         <input
           type="text"
-          name="tags"
+          name="techStack"
           placeholder="e.g. react,nextjs,tailwind"
           className="p-2 mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
         />
