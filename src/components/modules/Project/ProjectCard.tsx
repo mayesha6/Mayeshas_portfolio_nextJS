@@ -8,7 +8,7 @@ import { Laptop, Network } from "lucide-react";
 export default function ProjectCard({ project }: { project: any }) {
     console.log(project)
   return (
-    <div className="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+    <div className="group bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300">
       <Image
         src={project.thumbnail}
         alt={project.title}
@@ -17,7 +17,7 @@ export default function ProjectCard({ project }: { project: any }) {
         className="object-cover w-full h-48"
       />
       <div className="p-5">
-        <h2 className="text-xl font-semibold mb-2">{project.title}</h2>
+        <h2 className="text-xl font-bold mb-2 group-hover:text-[#FDC435] transition-colors">{project.title}</h2>
         <p className="text-gray-600 text-sm mb-4">{project.content}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">

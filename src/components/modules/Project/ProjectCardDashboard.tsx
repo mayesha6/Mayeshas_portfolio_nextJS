@@ -61,11 +61,11 @@ export default function ProjectCardDashboard({
 
   return (
     <div className="relative bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 group">
-      {/* Edit + Delete Buttons */}
+     
       <div className="absolute top-3 right-3 z-20 flex gap-2">
         <Link
           href={`/dashboard/updateProjectById/${project.id}`}
-          className="bg-blue-500 text-white text-xs px-3 py-1 rounded-md hover:bg-blue-600 transition-colors"
+          className="bg-[#FDC435] text-white text-xs px-3 py-1 rounded-md hover:bg-[#d09c17] transition-colors"
         >
           Edit
         </Link>
@@ -101,7 +101,7 @@ export default function ProjectCardDashboard({
         </AlertDialog>
       </div>
 
-      {/* Thumbnail */}
+      
       {project.thumbnail ? (
         <div className="relative h-56 w-full overflow-hidden">
           <Image
@@ -117,9 +117,9 @@ export default function ProjectCardDashboard({
         </div>
       )}
 
-      {/* Content */}
+  
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors">
+        <h3 className="text-xl font-bold mb-2 group-hover:text-[#FDC435] transition-colors">
           {project.title}
         </h3>
 
@@ -127,7 +127,7 @@ export default function ProjectCardDashboard({
           {project.content}
         </p>
 
-        {/* Tech Stack */}
+   
         {project.techStack && project.techStack.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-4">
             {project.techStack.map((tech: string) => (
@@ -141,7 +141,7 @@ export default function ProjectCardDashboard({
           </div>
         )}
 
-        {/* Links */}
+    
         <div className="flex justify-between">
           {project.livelink ? (
             <Link
