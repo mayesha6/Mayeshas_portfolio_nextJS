@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Laptop, Network } from "lucide-react";
 
 export default function ProjectCard({ project }: { project: any }) {
+    console.log(project)
   return (
     <div className="bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300">
       <Image
@@ -32,14 +33,14 @@ export default function ProjectCard({ project }: { project: any }) {
 
         <div className="flex justify-between">
           <Link
-            href={project.liveLink}
+            href={project.livelink}
             target="_blank"
             className="text-[#FDC435] hover:underline text-sm flex justify-center items-center gap-1"
           >
             <Network size={26} /> Live Site
           </Link>
           <Link
-            href={project.repoLink}
+            href={project.repolink}
             target="_blank"
             className="text-gray-600 hover:underline text-sm flex justify-center items-center gap-1"
           >

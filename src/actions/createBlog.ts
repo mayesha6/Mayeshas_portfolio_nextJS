@@ -4,7 +4,7 @@ import getUserSesssion from "@/helpers/getUserSesssion";
 import { revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 
-export const create = async (data: FormData) => {
+export const createBlog = async (data: FormData) => {
   const session = await getUserSesssion()
   const blogInfo = Object.fromEntries(data.entries());
   const modifiedData = {

@@ -1,7 +1,7 @@
 "use client";
 import Form from "next/form";
 import { useState } from "react";
-import { create } from "@/actions/create";
+import { createBlog } from "@/actions/createBlog";
 
 export default function CreateBlogsForm() {
   const [error, setError] = useState<string | null>(null);
@@ -12,14 +12,14 @@ export default function CreateBlogsForm() {
     const thumbnail = formData.get("thumbnail")?.toString().trim();
     const tags = formData.get("tags")?.toString().trim();
 
-    // Basic validation
+    
     if (!title || !content || !thumbnail || !tags) {
       setError("All fields are required!");
       return;
     }
 
-    setError(null); // clear previous error
-    await create(formData); // call server action
+    setError(null);
+    await createBlog(formData); 
   };
 
   return (

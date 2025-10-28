@@ -1,9 +1,19 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import ProjectCard from "@/components/modules/Project/ProjectCard";
-import { projectsData } from "@/data/projects";
+import { Metadata } from "next";
 
-export const revalidate = 60;
+export const metadata: Metadata = {
+  title: "All Projects | Mayesha",
+  description: "browse all projects on web development, Next JS, React JS and more."
+};
 
-export default async function ProjectsPage() {
+const ProjectsPage = async () => {
+
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/project`, {
+    cache: "no-store",
+  });
+  const projects = await res.json();
+  console.log(projects.data.data)
   return (
     <section className="container mx-auto my-36">
       <h1 className="text-4xl mb-4 text-center">Project Showcase</h1>
@@ -13,10 +23,12 @@ export default async function ProjectsPage() {
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projectsData.map((project) => (
+        {projects?.data?.data?.map((project:any) => (
           <ProjectCard key={project.id} project={project}/>
         ))}
       </div>
     </section>
   );
 }
+
+export default ProjectsPage;

@@ -1,7 +1,7 @@
 "use client";
 import Form from "next/form";
 import { useState } from "react";
-import { create } from "@/actions/create";
+import { createProject } from "@/actions/createProject";
 
 export default function CreateProjectForm() {
   const [error, setError] = useState<string | null>(null);
@@ -20,7 +20,7 @@ export default function CreateProjectForm() {
     }
 
     setError(null); 
-    await create(formData); 
+    await createProject(formData); 
   };
 
   return (

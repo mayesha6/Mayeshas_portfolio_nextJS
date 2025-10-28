@@ -17,20 +17,21 @@ export default function Sidebar() {
           <Home className="h-4 w-4" />
           Home
         </Link>
+
         <Link
           href="/projects"
           className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-100 hover:text-black"
         >
           <File className="h-4 w-4" />
-          Project
+          Projects
         </Link>
 
         <Link
-          href="/dashboard/create-blog"
+          href="/dashboard/createProject"
           className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-100 hover:text-black"
         >
-          <PlusCircle className="h-4 w-4" />
-          Create Blog
+          <File className="h-4 w-4" />
+          Create Project
         </Link>
 
         <Link
@@ -39,6 +40,14 @@ export default function Sidebar() {
         >
           <PlusCircle className="h-4 w-4" />
           Blogs
+        </Link>
+
+        <Link
+          href="/dashboard/createBlog"
+          className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium hover:bg-gray-100 hover:text-black"
+        >
+          <PlusCircle className="h-4 w-4" />
+          Create Blog
         </Link>
       </nav>
 
