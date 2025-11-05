@@ -43,7 +43,7 @@ export default function LoginForm() {
       await signIn("credentials", {
         ...values,
         redirect: true,
-        callbackUrl: "/dashboard",
+        callbackUrl: "/",
       });
     } catch (err) {
       console.error(err);

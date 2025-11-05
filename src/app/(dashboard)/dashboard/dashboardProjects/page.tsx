@@ -15,7 +15,7 @@ const DashboardProjectsPage = async () => {
   const projects = await res.json();
   console.log(projects.data.data)
   return (
-    <section className="container mx-auto my-36">
+    <section className="container mx-auto my-10">
       <h1 className="text-4xl mb-4 text-center">Project Showcase</h1>
       <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">
         A selection of my personal and full-stack projects, showcasing both

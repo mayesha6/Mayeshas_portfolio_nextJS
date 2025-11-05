@@ -1,6 +1,3 @@
-// types.ts
-
-// Single Post
 export interface IPost {
   id: number;
   title: string;
@@ -10,11 +7,10 @@ export interface IPost {
   tags: string[];
   views: number;
   authorId: number;
-  createdAt: string; // ISO string from API
-  updatedAt: string; // ISO string from API
+  createdAt: string;
+  updatedAt: string;
 }
 
-// Meta info for pagination
 export interface IMeta {
   page: number;
   limit: number;
@@ -22,7 +18,6 @@ export interface IMeta {
   totalPage: number;
 }
 
-// Generic API Response for posts
 export interface IPostResponse {
   data: IPost[];
   meta: IMeta;

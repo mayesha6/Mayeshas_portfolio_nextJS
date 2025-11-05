@@ -1,4 +1,4 @@
-import GoogleProvider from "next-auth/providers/google";
+// import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { NextAuthOptions } from "next-auth";
 
@@ -21,10 +21,10 @@ declare module "next-auth" {
 
 export const authOptions: NextAuthOptions = {
   providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID as string,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
-    }),
+    // GoogleProvider({
+    //   clientId: process.env.GOOGLE_CLIENT_ID as string,
+    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    // }),
     CredentialsProvider({
       name: "Credentials",
 
@@ -77,6 +77,9 @@ export const authOptions: NextAuthOptions = {
       },
     }),
   ],
+  pages: {
+    signIn: "/login",
+  },
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
@@ -91,12 +94,10 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
     async redirect({ baseUrl }) {
-      // ✅ Always redirect to dashboard
-      return `${baseUrl}/dashboard`;
+      
+      return baseUrl;
     },
   },
   secret: process.env.AUTH_SECRET,
-  pages: {
-    signIn: "/login",
-  },
+  
 };
