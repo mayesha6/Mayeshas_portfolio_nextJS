@@ -11,9 +11,9 @@ interface NavMenuProps extends NavigationMenuProps {
   isLoggedIn?: boolean;
 }
 
-export const NavMenu = ({ isLoggedIn, ...props }: NavMenuProps) => (
-  <NavigationMenu {...props}>
-    <NavigationMenuList className="gap-6 space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start font-medium">
+export const NavMenu = ({ isLoggedIn, orientation = "horizontal", ...props }: NavMenuProps) => (
+  <NavigationMenu orientation={orientation} {...props}>
+    <NavigationMenuList className={`gap-6 space-x-0 ${orientation === "vertical" ? "flex flex-col items-start" : ""} font-medium`}>
       <NavigationMenuItem>
         <NavigationMenuLink asChild>
           <Link href="/">Home</Link>
@@ -50,3 +50,4 @@ export const NavMenu = ({ isLoggedIn, ...props }: NavMenuProps) => (
     </NavigationMenuList>
   </NavigationMenu>
 );
+

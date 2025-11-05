@@ -40,7 +40,7 @@ const Navbar = () => {
           )}
 
           <div className="md:hidden">
-            <NavigationSheet />
+            <NavigationSheet isLoggedIn={!!session?.user} />
           </div>
         </div>
       </div>
