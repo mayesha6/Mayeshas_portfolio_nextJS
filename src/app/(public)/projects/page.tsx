@@ -1,35 +1,14 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import ProjectCard from "@/components/modules/Project/ProjectCard";
-import ProjectCardDashboard from "@/components/modules/Project/ProjectCardDashboard";
+import Project from "@/components/modules/Project/Project";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "All Projects | Mayesha",
-  description: "browse all projects on web development, Next JS, React JS and more."
+  description:
+    "browse all projects on web development, Next JS, React JS and more.",
 };
 
 const ProjectsPage = async () => {
-
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_API}/project`, {
-    cache: "no-store",
-  });
-  const projects = await res.json();
-  console.log(projects.data.data)
-  return (
-    <section className="container mx-auto my-36 px-5">
-      <h1 className="text-4xl mb-4 text-center">Project Showcase</h1>
-      <p className="text-gray-600 text-center mb-12 max-w-xl mx-auto">
-        A selection of my personal and full-stack projects, showcasing both
-        frontend and backend development skills.
-      </p>
-
-      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
-        {projects?.data?.data?.map((project:any) => (
-          <ProjectCard key={project.id} project={project}/>
-        ))}
-      </div>
-    </section>
-  );
-}
+  return <Project />;
+};
 
 export default ProjectsPage;

@@ -14,8 +14,8 @@ export default async function Hero() {
         />
 
         <section className="max-w-7xl mx-auto relative flex flex-col items-center justify-center text-center py-36 text-white">
-          <div className="flex justify-between items-center w-full container mx-auto">
-            <div className="flex-1">
+          <div className="flex flex-col-reverse md:flex-row justify-between items-center w-full container mx-auto gap-14 md:gap-0">
+            <div className="flex-1 ">
               <div className="max-w-[486px]">
                 <h1 className="text-white font-bold text-5xl leading-16 ">
                   Hello, my name is Mayesha Mumtaz
